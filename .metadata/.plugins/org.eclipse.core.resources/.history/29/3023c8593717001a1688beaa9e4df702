@@ -1,0 +1,83 @@
+package datastructure;
+
+import datastructure.LinkedList.Node;
+
+public class BST {
+
+	Node insert(int x,Node root)
+	{
+		
+	}
+	Node insertData(int x, Node root) {
+		if (root == null) {
+			root = new Node(x);
+		}
+		// return new Node(x);
+		if (x < root.d) {
+			root.left = insertData(x, root.left);
+		}
+		if (x > root.d) {
+			root.right = insertData(x, root.right);
+		}
+		return root;
+	}
+
+	void postorder(Node root) {
+		if (root != null) {
+			postorder(root.left);
+			postorder(root.right);
+			System.out.print(root.d + " ");
+		}
+	}
+
+	void preorder(Node root) {
+		if (root != null) {
+			System.out.print(root.d + " ");
+			preorder(root.left);
+			preorder(root.right);
+		}
+	}
+
+	void inorder(Node root) {
+		if (root != null) {
+			inorder(root.left);
+			System.out.print(root.d + " ");
+			inorder(root.right);
+		}
+	}
+
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		BST bst = new BST();
+		bst.insert(7, ll.root);
+		bst.insert(5, ll.root);
+		bst.insert(4, ll.root);
+		bst.insert(6, ll.root);
+		bst.insert(2, ll.root);
+		// System.out.println(ll.root.d);
+		System.out.println("inoder ");
+		bst.inorder(ll.root);
+		System.out.println();
+		System.out.println("preoder ");
+		bst.preorder(ll.root);
+		System.out.println();
+		System.out.println("postoder ");
+		bst.postorder(ll.root);
+	}
+}
+
+class LinkedList {
+	Node root = null;
+
+	static class Node {
+		int d;
+		Node left;
+		Node right;
+
+		public Node(int x) {
+			d = x;
+			left = right = null;
+		}
+
+	}
+}

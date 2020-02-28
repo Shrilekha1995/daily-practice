@@ -1,0 +1,61 @@
+
+public class TestNumber {
+
+public static void main(String[] args) {
+		int k=0,k2=0;
+		int count=0;
+		for(int i=1;i<=4;i++)
+		{
+			for(int j=1;j<=4;j++)
+			{
+				if(j<=i)
+				{
+					if(i%2!=0)
+					{
+						
+						System.out.print(k++);
+					}
+					else
+					{
+						count++;
+						System.out.print(k--);
+					}
+					
+				}
+				else
+				{
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+	}
+
+/*	public static void main(String[] args) {
+		int t=5;
+		int number=0;
+		int i=1;
+		do{
+			if(i%2 == 0){
+				number+=i-1;
+				for(int j=0;j<i;j++){
+					System.out.print(number+" ");
+					number--;
+				}
+				System.out.println();
+				number+=i;
+			}
+			else{
+				number+=1;
+				for(int j=0;j<i;j++){
+					
+					System.out.print(number+" ");
+					number++;
+				}
+				
+				System.out.println();
+			}
+			i++;
+		}while(t>=i);
+	}
+}*/

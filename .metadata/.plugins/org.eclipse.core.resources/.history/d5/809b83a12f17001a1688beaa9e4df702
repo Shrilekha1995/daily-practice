@@ -1,0 +1,91 @@
+package datastructure;
+
+import datastructure.LinkedList.Node;
+
+public class BST {
+
+	Node insertData(int x, Node root) {
+		//Node newNode = new Node(x);
+		if (root == null) {
+			root = new Node(x);
+		} else {
+			if (x < root.d) {
+				root.left = insertData(x, root.left);
+			} else {
+				root.right = insertData(x, root.right);
+			}
+
+		}
+		return root;
+	}
+
+	/*
+	 * void display(Node root) { Node tmp = root; while (tmp != null) {
+	 * System.out.println(tmp.d); tmp. = tmp; } }
+	 */
+
+	/*void inorder(Node root) {
+		if(root.left!=null)
+			inorder(root.left);
+		System.out.println(root.d);
+		if(root.right!=null)
+			inorder(root.right);
+	}
+
+	void preorder(Node root) {
+		if(root.left!=null)
+			preorder(root.left);
+		if(root.right!=null)	
+			preorder(root.right);
+		System.out.println(root.d);
+	}
+
+	void postorder(Node root) {
+
+		System.out.println(root.d);
+		if(root.left!=null)
+			postorder(root.left);
+		if(root.right!=null)
+			postorder(root.right);
+	}*/
+	
+	void inorder(Node root) {
+		if(root!=null)
+		{
+			inorder(root.left);
+			System.out.println(root.d);
+			inorder(root.right);
+		}
+		
+	//	return root;
+	}
+
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		BST bst = new BST();
+		bst.insertData(5, ll.root);
+		bst.insertData(4, ll.root);
+		bst.insertData(6, ll.root);
+		bst.insertData(2, ll.root);
+		//System.out.println(ll.root.d);
+		bst.inorder(ll.root);
+		/*bst.preorder(ll.root);
+		bst.postorder(ll.root);*/
+	}
+}
+
+class LinkedList {
+	Node root;
+
+	static class Node {
+		int d;
+		Node left;
+		Node right;
+
+		public Node(int x) {
+			d = x;
+			left = right = null;
+		}
+
+	}
+}

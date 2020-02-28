@@ -1,0 +1,45 @@
+package datastructure;
+
+import datastructure.LinkedList.Node;
+
+public class BST {
+
+	Node insertData(int x, Node root) {
+		Node newNode = new Node(x);
+		if (root == null) {
+			root = newNode;
+			newNode=root;
+		} else {
+			if(x<root.d)
+			{
+				root.left=insertData(x, root.left);
+			}
+			else
+			{
+				root.right=insertData(x, root.right);
+			}
+				
+		}
+		return root;
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}
+
+class LinkedList {
+	Node root;
+
+	static class Node {
+		int d;
+		Node left;
+		Node right;
+
+		public Node(int x) {
+			d = x;
+			left = right = null;
+		}
+
+	}
+}

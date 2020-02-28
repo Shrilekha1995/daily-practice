@@ -1,0 +1,98 @@
+package datastructure;
+
+public class BST {
+
+	Node root = null;
+
+	static class Node {
+		int d;
+		Node left;
+		Node right;
+
+		public Node(int x) {
+			d = x;
+			left = right = null;
+		}
+
+	}
+
+	void insert(int x) {
+		root = insertData(x, root);
+	}
+
+	Node insertData(int x, Node root) {
+		if (root == null) {
+			root = new Node(x);
+		}
+		if (x < root.d) {
+			root.left = insertData(x, root.left);
+		}
+		if (x > root.d) {
+			root.right = insertData(x, root.right);
+		}
+		return root;
+	}
+
+	void inorder() {
+		inorderRec(root);
+	}
+
+	void inorderRec(Node root) {
+		if (root != null) {
+			inorderRec(root.left);
+			System.out.print(root.d + " ");
+			inorderRec(root.right);
+		}
+	}
+
+	void preorder() {
+		preorderRec(root);
+	}
+
+	void preorderRec(Node root) {
+		if (root != null) {
+			System.out.print(root.d + " ");
+			preorderRec(root.left);
+			preorderRec(root.right);
+		}
+	}
+
+	void postorder() {
+		postorderRec(root);
+	}
+
+	void postorderRec(Node root) {
+		if (root != null) {
+			postorderRec(root.left);
+			postorderRec(root.right);
+			System.out.print(root.d + " ");
+		}
+	}
+	
+	void delete(int k)
+	{
+		root=deleteKey(root,k);
+	}
+	
+	Node deleteKey(Node root,int k)
+	{
+		
+	}
+
+	public static void main(String[] args) {
+		BST bst = new BST();
+		bst.insert(7);
+		bst.insert(5);
+		bst.insert(4);
+		bst.insert(6);
+		bst.insert(2);
+		System.out.println("inoder ");
+		bst.inorder();
+		System.out.println();
+		System.out.println("preoder ");
+		bst.preorder();
+		System.out.println();
+		System.out.println("postoder ");
+		bst.postorder();
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;mazedi&apos; to &apos;generics&apos;&#x0D;&#x0A;- Original project: &apos;OopsConcept&apos;&#x0D;&#x0A;- Original element: &apos;OopsConcept/src/mazedi&apos;&#x0D;&#x0A;- Renamed element: &apos;OopsConcept/src/generics&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;mazedi&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;mazedi" name="generics" qualified="false" references="true" stamp="1563342513950" textual="false" version="1.0"/>
+</session>

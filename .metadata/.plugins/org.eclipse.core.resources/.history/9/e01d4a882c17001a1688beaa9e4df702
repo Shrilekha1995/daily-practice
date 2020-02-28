@@ -1,0 +1,25 @@
+package datastructure;
+
+public class BST {
+
+	void insertData(int x,LinkedList ll)
+	{
+		
+	}
+}
+
+class LinkedList {
+	Node root;
+
+	static class Node {
+		int d;
+		Node left;
+		Node right;
+
+		public Node(int x) {
+			d = x;
+			next = null;
+		}
+
+	}
+}

@@ -1,0 +1,18 @@
+package datastructure;
+
+public class BST {
+
+	
+}
+class LinkedList
+{
+	static class Node
+	{
+		int d;
+		Node next;
+		public Node() {
+			
+		}
+		
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;oopsConcept.MethodOverridingExample&apos; to &apos;Employee&apos;&#x0D;&#x0A;- Original project: &apos;OopsConcept&apos;&#x0D;&#x0A;- Original element: &apos;oopsConcept.MethodOverridingExample&apos;&#x0D;&#x0A;- Renamed element: &apos;oopsConcept.Employee&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MethodOverridingExample&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;oopsConcept{MethodOverridingExample.java[MethodOverridingExample" matchStrategy="1" name="Employee" qualified="false" references="true" similarDeclarations="false" stamp="1562042695762" textual="false" version="1.0"/>
+</session>

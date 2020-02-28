@@ -1,0 +1,98 @@
+package com.app.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+//import com.app.model.AddressBean;
+//import com.app.model.UserBean;
+import com.app.pojos.Address;
+import com.app.pojos.User;
+import com.app.service.UserService;
+
+@RestController
+@CrossOrigin("http://localhost:4200")
+public class UserController {
+
+	@Autowired
+	UserService userService;
+
+	@PostMapping("/new")
+	public void saveUser(@RequestBody User user) {
+		userService.saveUser(user);
+	}
+	
+	@PostMapping("/login")
+	public String loginUser(@RequestBody User user)
+	{
+		String name=user.getName();
+		String role=user.getUserRole();
+		
+		User u=userService.findUserByname(name,role);
+		
+		if(u!=null){
+			//UserBean uBean=new UserBean(u.getUserId(),u.getName(),u.getUserRole());
+		System.out.println("*****************successfully"+u);
+		return "true";
+		}
+	
+        return "false";
+	}
+
+	
+/*	@GetMapping("/users")
+	public List<UserBean> getUsers() {
+		//System.out.println(userService.getUsers());
+		List<UserBean> uBean=new ArrayList<UserBean>();
+		List<User> uList=userService.getUsers();
+		for (User user : uList) {
+			Address addr=user.getAddress();
+			UserBean u=new UserBean(user.getUserId(),user.getName(), user.getUserRole(),new AddressBean(addr.getId(),addr.getStreet(),addr.getCity(),addr.getState()));
+			uBean.add(u);
+		}
+		return uBean;
+	}*/
+	
+
+	@GetMapping("/users")
+	public List<User> getUsers() {
+		
+		return userService.getUsers();
+		
+	}
+	
+	@DeleteMapping("/deleteUser/{id}")
+	public void deleteUser(@PathVariable("id") Integer userId){
+		
+		userService.deleteUser(userId);
+	}
+	
+	@PutMapping("updateUser")
+	public void updateUser(@RequestBody User user)
+     {
+		
+
+		userService.updateUser(user);
+		
+	
+     }
+	
+	@PostMapping("forgotPass")
+	public void forgotPassword(@RequestBody User user)
+	{
+		
+		System.out.println("**********"+user+"***********");
+		userService.forgot(user.getName());
+	}
+}

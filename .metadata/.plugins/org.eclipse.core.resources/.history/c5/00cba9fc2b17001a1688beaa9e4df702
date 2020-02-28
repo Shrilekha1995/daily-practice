@@ -1,0 +1,6 @@
+package datastructure;
+
+public class BST {
+
+	int a[]=new int[]
+}
